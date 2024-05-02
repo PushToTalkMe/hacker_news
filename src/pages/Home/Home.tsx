@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { fetchPosts } from "../../store/reducers/ActionCreator";
 import { PostItem } from "../../components/PostItem/PostItem";
 import { Button, Spinner, Div } from "@vkontakte/vkui";
+import styles from "./Home.module.css";
 
 function Home() {
   const dispatch = useAppDispatch();
@@ -21,11 +22,11 @@ function Home() {
   }, []);
 
   return (
-    <Div style={{ display: "flex", flexDirection: "column" }}>
+    <Div className={styles.home}>
       {isLoading ? (
         <>
-          <Spinner size="large" style={{ margin: "20px 0" }} />
-          <h1 style={{ textAlign: "center" }}>Идет обновление новостей...</h1>
+          <Spinner size="large" className={styles.spinner} />
+          <h1 className={styles.h1}>Идет обновление новостей...</h1>
         </>
       ) : (
         <>
@@ -46,9 +47,7 @@ function Home() {
         </>
       )}
       {error && (
-        <h1 style={{ textAlign: "center" }}>
-          Произошла ошибка при загрузке новостей
-        </h1>
+        <h1 className={styles.h1}>Произошла ошибка при загрузке новостей</h1>
       )}
     </Div>
   );

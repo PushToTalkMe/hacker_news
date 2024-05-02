@@ -5,6 +5,7 @@ import { fetchCommentsKids } from "../../store/reducers/ActionCreator";
 import { Card, ContentCard, Spinner } from "@vkontakte/vkui";
 import { formatDate } from "../../helper/formatDate";
 import { CommentItemKids } from "../CommentItemKids/CommentItemKids";
+import styles from "./CommentItem.module.css";
 
 const CommentItem: FC<CommentItemProps> = ({ comment, width }) => {
   const [isOtherComments, setIsOtherComments] = useState(false);
@@ -14,18 +15,18 @@ const CommentItem: FC<CommentItemProps> = ({ comment, width }) => {
   );
   return (
     <div
+      className={styles.commentItem}
       style={{
         width: width,
-        margin: "auto",
       }}
     >
       {comment.deleted ? (
-        <h3 style={{ textAlign: "center" }}>Комментарий удален</h3>
+        <h3 className={styles.h3}>Комментарий удален</h3>
       ) : (
         <>
           <Card
             mode="outline"
-            style={{ margin: "10px 0px 10px 0px", cursor: "pointer" }}
+            className={styles.card}
             onClick={() => {
               if (!isOtherComments) {
                 dispatch(fetchCommentsKids(comment.kids));
@@ -44,8 +45,8 @@ const CommentItem: FC<CommentItemProps> = ({ comment, width }) => {
               <>
                 {comments_kids_isLoading ? (
                   <>
-                    <Spinner size="large" style={{ margin: "20px 0" }} />
-                    <h2 style={{ textAlign: "center" }}>
+                    <Spinner size="large" className={styles.spinner} />
+                    <h2 className={styles.h2}>
                       Идет загрузка вложенных комментариев
                     </h2>
                   </>
@@ -70,9 +71,7 @@ const CommentItem: FC<CommentItemProps> = ({ comment, width }) => {
                 )}
               </>
             ) : (
-              <h4 style={{ textAlign: "center" }}>
-                Вложенных комментариев нет
-              </h4>
+              <h4 className={styles.h4}>Вложенных комментариев нет</h4>
             )
           ) : null}
         </>

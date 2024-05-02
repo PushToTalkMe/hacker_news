@@ -3,12 +3,12 @@ import { useRouteNavigator } from "@vkontakte/vk-mini-apps-router";
 import { PostItemProps } from "./PostItem.props";
 import { ContentCard, Button, Card } from "@vkontakte/vkui";
 import { formatDate } from "../../helper/formatDate";
-
+import styles from "./PostItem.module.css";
 const PostItem: FC<PostItemProps> = ({ post }) => {
   const routerNavigator = useRouteNavigator();
 
   return (
-    <Card mode="outline" style={{ margin: "10px 0px 10px 0px" }}>
+    <Card mode="outline" className={styles.card}>
       <ContentCard
         subtitle={post.by}
         header={post.title}

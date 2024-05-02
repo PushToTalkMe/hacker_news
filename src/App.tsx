@@ -2,8 +2,6 @@ import React from "react";
 import { Home } from "./pages/Home/Home";
 import { Post } from "./pages/Post/Post";
 import { Root, View, Panel } from "@vkontakte/vkui";
-
-import "./App.css";
 import { useActiveVkuiLocation } from "@vkontakte/vk-mini-apps-router";
 
 function App() {

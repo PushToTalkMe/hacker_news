@@ -1,0 +1,30 @@
+.post {
+  display: flex;
+  flex-direction: column;
+}
+
+.spinner {
+  margin: 20px 0;
+}
+
+.h1 {
+  text-align: center;
+}
+
+.h2 {
+  text-align: center;
+}
+
+.div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin: 10px 0 5px 0;
+}
+
+.subhead {
+  margin-bottom: 10px;
+}

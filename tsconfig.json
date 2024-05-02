@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -14,7 +14,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "jsx": "react-jsx"
   },
-  "include": ["src", "../rtk query", "src/components/CommentItemKids"]
+  "include": [
+    "src",
+    "../rtk query",
+    "src/components/CommentItemKids",
+    "global.d.ts"
+  ]
 }

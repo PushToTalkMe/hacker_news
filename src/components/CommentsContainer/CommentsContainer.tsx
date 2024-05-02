@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { Button, Div, Spinner } from "@vkontakte/vkui";
 import { CommentItem } from "../CommentItem/CommentItem";
 import { fetchComments } from "../../store/reducers/ActionCreator";
+import styles from "./CommentsContainer.module.css";
 
 const CommentsContainer: FC<CommentsContainerProps> = ({ kids }) => {
   const dispatch = useAppDispatch();
@@ -14,13 +15,11 @@ const CommentsContainer: FC<CommentsContainerProps> = ({ kids }) => {
     dispatch(fetchComments(kids));
   }, []);
   return (
-    <Div
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    >
+    <Div className={styles.commentsContainer}>
       {comments_isLoading ? (
         <>
-          <Spinner size="large" style={{ margin: "20px 0" }} />
-          <h2 style={{ textAlign: "center" }}>Идет загрузка комментариев</h2>
+          <Spinner size="large" className={styles.spinner} />
+          <h2 className={styles.h2}>Идет загрузка комментариев</h2>
         </>
       ) : (
         <>

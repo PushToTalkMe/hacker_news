@@ -15,6 +15,7 @@ import {
   Spinner,
 } from "@vkontakte/vkui";
 import { formatDate } from "../../helper/formatDate";
+import styles from "./Post.module.css";
 
 const postcb = (posts: IPost[], id: number): IPost | undefined => {
   return posts.find((post) => post.id === id);
@@ -40,11 +41,11 @@ const Post = () => {
   }, [posts]);
 
   return (
-    <Div style={{ display: "flex", flexDirection: "column" }}>
+    <Div className={styles.post}>
       {isLoading && (
         <>
-          <Spinner size="large" style={{ margin: "20px 0" }} />
-          <h1 style={{ textAlign: "center" }}>Идет загрузка новости</h1>
+          <Spinner size="large" className={styles.spinner} />
+          <h1 className={styles.h1}>Идет загрузка новости</h1>
         </>
       )}
       {error && <h1>Произошла ошибка при загрузке поста</h1>}
@@ -58,17 +59,11 @@ const Post = () => {
           >
             Назад
           </Button>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Title level="1" style={{ margin: "10px 0 5px 0" }}>
+          <div className={styles.div}>
+            <Title level="1" className={styles.title}>
               {post.title}
             </Title>
-            <Subhead style={{ marginBottom: "10px" }}>Автор: {post.by}</Subhead>
+            <Subhead className={styles.subhead}>Автор: {post.by}</Subhead>
             <Headline>Дата публикации: {formatDate(post.time)}</Headline>
             <Text>Количество комментариев: {post.descendants}</Text>
             <Link href={post.url}>URL-адрес статьи</Link>
@@ -76,7 +71,7 @@ const Post = () => {
           {post.descendants ? (
             <CommentsContainer kids={post.kids} />
           ) : (
-            <h2 style={{ textAlign: "center" }}>Комментариев нет</h2>
+            <h2 className={styles.h2}>Комментариев нет</h2>
           )}
         </div>
       )}

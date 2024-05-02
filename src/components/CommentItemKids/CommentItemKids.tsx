@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { CommentItemKidsProps } from "./CommentItemKids.props";
 import { Card, ContentCard } from "@vkontakte/vkui";
 import { formatDate } from "../../helper/formatDate";
+import styles from "./CommentItemKids.module.css";
 
 const CommentItemKids: FC<CommentItemKidsProps> = ({ comment, width }) => {
   return (
@@ -12,10 +13,10 @@ const CommentItemKids: FC<CommentItemKidsProps> = ({ comment, width }) => {
       }}
     >
       {comment.deleted ? (
-        <h5 style={{ textAlign: "center" }}>Вложенный комментарий удален</h5>
+        <h5 className={styles.h5}>Вложенный комментарий удален</h5>
       ) : (
         <>
-          <Card mode="outline" style={{ margin: "10px 0px 10px 0px" }}>
+          <Card mode="outline" className={styles.card}>
             <ContentCard
               subtitle={comment.by}
               caption={formatDate(comment.time)}
