@@ -1,7 +1,7 @@
 # Hacker News
 
 - "app_id": 51914747
-  - Ссылка на приложение:
+  - Ссылка на приложение: https://vk.com/app51914747
 - Для локального запуска приложения необходимо выполнить следующие команды в терминале вашего IDE (необходимо иметь заранее установленный git и yarn):
   - `git clone https://github.com/PushToTalkMe/hacker_news.git`
   - `cd hacker_news/`
