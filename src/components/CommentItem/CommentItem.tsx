@@ -25,7 +25,7 @@ const CommentItem: FC<CommentItemProps> = ({ comment, width }) => {
         <>
           <Card
             mode="outline"
-            style={{ margin: "10px 0px 10px 0px" }}
+            style={{ margin: "10px 0px 10px 0px", cursor: "pointer" }}
             onClick={() => {
               if (!isOtherComments) {
                 dispatch(fetchCommentsKids(comment.kids));
