@@ -16,5 +16,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "../rtk query"]
+  "include": ["src", "../rtk query", "src/components/CommentItemKids"]
 }
