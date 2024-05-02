@@ -1,0 +1,58 @@
+{
+  "name": "hacker_news",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@reduxjs/toolkit": "^2.2.3",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.7.13",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@types/react-redux": "^7.1.33",
+    "@vkontakte/vk-bridge": "^2.14.1",
+    "@vkontakte/vk-mini-apps-router": "^1.4.3",
+    "@vkontakte/vk-miniapps-deploy": "^0.1.7",
+    "@vkontakte/vk-tunnel": "^0.2.0",
+    "@vkontakte/vkui": "^6.0.2",
+    "axios": "^1.6.8",
+    "classnames": "^2.5.1",
+    "cross-env": "^7.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-redux": "^9.1.1",
+    "react-router-dom": "^6.23.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.4.2",
+    "web-vitals": "^2.1.0"
+  },
+  "scripts": {
+    "start": "cross-env PORT=3000 HTTPS=true react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "tunnel": "vk-tunnel --insecure=0 --http-protocol=https --ws-protocol=wss --host=localhost --port=3000",
+    "deploy": "vk-miniapps-deploy"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
